@@ -312,8 +312,6 @@ function findCard() {
 
 function makeDragonDrop(cardTarget) {
     let card = cardTarget;
-    let cord = card.getBoundingClientRect();
-    let dek = mainBlock.getBoundingClientRect();
 
     card.onmousedown = function(e) { 
                     
