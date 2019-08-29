@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+$modalColor: #428bca; //need to remove in future
+
+@mixin centred {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+body{
+    background-image: url(../img/wrapper-bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.wrapper {
+
+    width: 1200px;
+    margin: 0 auto;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: baseline;
+    font-family: "Roboto";
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    vertical-align: 30px;
+
+    .logo {
+        background-image: url(../img/logo.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 150px;
+        height: 150px;
+        cursor: pointer;
+        margin: 40px;
+    }
+
+    #modal-btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-image: url(../img/modal-bg.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 200px;
+        height: 200px;
+        transform: rotate(-17deg);
+        margin-right: 50px;
+        margin-top: 40px;
+        cursor: pointer;
+
+        span {
+            font-size: 34px;
+            text-transform: uppercase;
+        }
+    }
+
+    .main-block {
+        // display: flex;
+        flex-wrap: wrap;
+        box-sizing: border-box;
+        vertical-align: top;
+        background-image: url(../img/main-bg.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+        width: 820px;
+        height: 70%;
+        margin: 20px 30px 0;
+        box-shadow: -8px 7px 5px 6px rgba(0, 0, 0, .5);
+
+        .clearAll{
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-size: contain;
+            right: 10px;
+            top: 10px;
+            cursor: pointer;
+            background-image:url(../img/clearAll.png)
+
+        }
+        span {
+            display: block;
+            margin-top: 40%;
+            font-size: 40px;
+            text-align: center;
+            text-transform: uppercase;
+            margin-left: 10%;
+
+        }
+
+        .created-elements {
+            display: flex;
+            align-content: center;
+            justify-content: space-evenly;
+            flex-direction: column;
+            font-family: sans-serif;
+            -webkit-user-select: none;
+            font-size: 14px;
+            width: 200px;
+            height: 200px;
+            background-image: url(../img/modal-bg.png);
+            margin: 20px 0 0 40px;
+            display: none;
+            position: absolute;
+            z-index: 1000;
+            top: 0px;
+            left: 0px;
+            box-shadow: 1px 1px 7px 4px rgba(0, 0, 0, .5);
+            li {
+                display: none;
+            }
+            #delete-visit{
+                position: absolute;
+                cursor: pointer;
+                top:0;
+                right: 0;
+                z-index: 100;
+                border: 10px solid transparent;
+                border-top: 10px solid black;
+                border-right: 10px solid black;
+            }
+        }
+    }
+
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .modal-content {
+        margin: 10% auto;
+        width: 30%;
+        box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.17);
+        animation-name: modalopen;
+        animation-duration: 1s;
+    }
+
+    .modal-header h2,
+    .modal-footer h3 {
+        margin: 0;
+    }
+
+    .modal-header {
+        background: $modalColor;
+        padding: 15px;
+        color: #fff;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+
+        h2 {
+            display: inline-block;
+        }
+    }
+
+    .modal-body {
+        padding: 20px 20px;
+        background-image: url(../img/modal-bg.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        #form-inputs {
+            margin: 20px 0;
+
+            li {
+                display: none;
+
+                input {
+                    display: block;
+                    margin: 10px 0;
+                }
+            }
+        }
+
+    }
+
+    .modal-footer {
+        background: $modalColor;
+        padding: 10px;
+        color: #fff;
+        text-align: center;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+    }
+
+    .close {
+        color: #ccc;
+        float: right;
+        font-size: 30px;
+        color: #fff;
+    }
+
+    .close:hover,
+    .close:focus {
+        color: #000;
+        text-decoration: none;
+        cursor: pointer;
+    }
+}
+
+textarea {
+    resize: none;
+    width: 80%;
+}
+.eror-msg::placeholder{
+    color: red;
+}
+
+@keyframes modalopen {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}

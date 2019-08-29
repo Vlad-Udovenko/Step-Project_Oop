@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="dist/css/style.css">
+    <title>Visit</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <a href="#" class="logo"></a>
+        <div id="modal-btn"><span>create visit</span></div>
+        <div class="main-block"  onselectstart="return false">
+            <div class="clearAll"></div>
+            <span>no items have been added</span>
+        </div>
+        <div id="visit-modal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Create Visit</h2>
+                    <span class="close">&times;</span>
+                </div>
+                <div class="modal-body" >
+                    <form action="">
+                        <select name="doctors" id="list-of-doctors">
+                            <option selected disabled>Choose doctor</option>
+                            <option value="cardiologist">Cardiologist</option>
+                            <option value="dentist">Dentist</option>
+                            <option value="therapist">Therapist</option>
+                        </select>
+                    </form>
+                    <ul id="form-inputs">
+                        <li>
+                            <input type="text" id="target" placeholder="Target" >
+                            <input type="date" id="date" placeholder="Date" >
+                            <input type="text" id="fullName" placeholder="Full Name" >
+                            <input type="text" id="pressure" placeholder="Pressure" >
+                            <input type="number" id="iWeight" placeholder="Index Weight" >
+                            <input type="text" id="diseases" placeholder="diseases" >
+                            <input type="number" id="age" placeholder="Age" >
+                            <textarea name="" id="" cols="50" rows="10" maxlength="400"
+                                placeholder="Add Comments"></textarea>
+                        <li>
+                            <input type="text" id="target" placeholder="Target">
+                            <input type="date" id="date" placeholder="Date">
+                            <input type="text" id="fullName" placeholder="Full Name">
+                            <input type="text" id="dataLastVisit" placeholder="Last Visit">
+                            <textarea name="" id="" cols="50" rows="10" maxlength="400"
+                                placeholder="Add Comments"></textarea>
+                        </li>
+                        <li>
+                            <input type="text" id="target" placeholder="Target">
+                            <input type="date" id="date" placeholder="Date">
+                            <input type="text" id="fullName" placeholder="Full Name">
+                            <input type="number" id="age" placeholder="Age">
+                            <textarea name="" id="" cols="50" rows="10" maxlength="400"
+                                placeholder="Add Comments"></textarea>
+                        </li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button>Create</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src='src/js/index.js'></script>
+</body>
+
+</html>
