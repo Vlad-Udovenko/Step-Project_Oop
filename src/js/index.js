@@ -266,7 +266,7 @@ function deleteVisit() {
     btnDelete = document.createElement('div');
     btnDelete.setAttribute("id", "delete-visit");
     btnDelete.innerText = "";
-    btnDelete.addEventListener('click', deleteVisBlock);
+    btnDelete.addEventListener('mousedown', deleteVisBlock);
     return btnDelete;
 }
 
