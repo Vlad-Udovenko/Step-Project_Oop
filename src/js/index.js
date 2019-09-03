@@ -40,7 +40,7 @@ function getCards() {
             }else{
                 createdElem.style.top = 0; 
             }
-            if(positions[idCard] !== undefined){
+            if(positions[idCard] != undefined){
                 createdElem.style.left = (`${positions[idCard][1]}` )
             }else{
                 createdElem.style.left = 0;
@@ -88,6 +88,7 @@ function openModal() {
 // Close
 function closeModal() {
     modal.style.display = 'none';
+
 }
 
 // Close If Outside Click
@@ -130,6 +131,7 @@ class Visit {
         createdElem.style.display = "flex";
 
         storeCardInLocalStorage(createdElem.children);
+        findCard();
     }
 }
 
@@ -222,6 +224,7 @@ function createVisit() {
             closeModal();
             document.querySelector(".main-block span").style.display = "none";
             clearInputs();
+            document.location.reload(true);
         }
     }
 }
@@ -370,7 +373,7 @@ function makeDragonDrop(cardTarget) {
             if (localStorage.getItem('positions') === null) {
                 positions = [];
             } else {
-                positions = JSON.parse(localStorage.getItem('positions'))
+                positions = JSON.parse(localStorage.getItem('positions'));
             }
             const temp = [];
         
@@ -378,7 +381,7 @@ function makeDragonDrop(cardTarget) {
                 temp.push(e.style.left);
         
             positions.splice(e.id,1,temp);
-            localStorage.setItem('positions', JSON.stringify(positions))
+            localStorage.setItem('positions', JSON.stringify(positions));
         
             }
 }
